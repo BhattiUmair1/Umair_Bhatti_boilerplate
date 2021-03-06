@@ -5,11 +5,12 @@
 */
 
 html {
-    font-size: 16px;
-    line-height: 1,5;
-    font-family: "Helvetica Neue", "Arial", "Helvetica", "sans";
-    color: springgreen;
-    padding: 24px 24px 0;
+  font-size: 16px;
+  line-height: 1, 5;
+  font-family: 'Helvetica Neue', 'Arial', 'Helvetica', 'sans';
+  color: black;
+  padding: 24px 24px 0; /* BOVEN LINKS-RECHTS ONDER */
+  scroll-behavior: smooth;
 }
 
 /*
@@ -20,22 +21,186 @@ html {
  */
 
 ::-moz-selection {
-    background: #44c8f5;
-    color: white;
+  background: #44c8f5;
+  color: white;
 }
 
 ::selection {
-    background: #44c8f5;
-    color: white;
+  background: #44c8f5;
+  color: white;
 }
 
-body{
-    max-width: 42em;
-    /* Dit verwijst naar de root font-size van onze html element (nu nog 16px) en dus hoe breed is dat nu?: 16*42=672px; */
-    margin: 0 auto;
+body {
+  max-width: 42em;
+  /* Dit verwijst naar de root font-size van onze html element (nu nog 16px) en dus hoe breed is dat nu?: 16*42=672px; */
+  /*
+    1em = de root font-size, de font-size die we in de html ingesteld hebben.
+    Dus 16px in dit geval.
+    Als we onze root font-size zouden vergroten naar 18px wordt de maximum breedte automatisch groter.
+    */
+  margin: 0 auto;
 }
 
-img{
-    max-width: 100%;
-    vertical-align: top;
+/* --------------------------------------------------------------------------------------- */
+
+img {
+  max-width: 50%;
+  vertical-align: top; /* Vragen wat vertical-align precieze is*/
+}
+
+/* ------------------------------------------------------------------------------ */
+
+h1 {
+  font-family: 'Times Nex Roman', serif;
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 40px;
+  margin: 0 0 48px;
+}
+
+h2 {
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+  margin: 0 0 24px;
+}
+
+ul,
+ol,
+blockquote {
+  font-style: italic;
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+  font-family: 'Times New Roman', serif;
+}
+
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote * { /* een "*" zegt dat alles dat in htmlelement "blockquote" bevindt 
+                onderstand zaken moet overerven*/
+  font-size: inherit;
+  line-height: inherit;
+}
+
+figcaption {
+  font-size: 12px;
+  line-height: 16px;
+  padding-top: 8px;
+  color: grey;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: lightgray;
+    margin: 0 0 24px;
+}
+
+a {
+    color: royalblue;
+    transition: all .1s ease-in-out;
+}
+
+a:hover, 
+a:focus { /* het ":" staat voor interactie met een bepaalde element in dit geval de a-element*/
+    color: crimson;
+}
+
+a:visited,
+a:active {
+    color: blueviolet
+}
+/* ------------------------------------------------------------------------------- */
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    Modify as content requires.
+*/
+
+
+/* Extra small devices (portrait phones, less than 576px)
+   No media query since this is the default in Bootstrap
+*/
+
+/* Small devices (landscape phones, 576px and up) */
+/* @media (min-width: 576px) {
+
+} */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    h1{
+        font-size: 58px;
+        line-height: 64px;
+    }
+
+    html{
+        padding: 48px 48px 24px;
+    }
+
+}
+
+/* Large devices (landscape tablets, desktops, 992px and up) */
+/* @media (min-width: 992px) {
+
+} */
+
+/* Extra large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) {
+
+} */
+
+/* ------------------------------------------------------------------------------- */
+table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+th {
+    text-align: left;
+}
+
+th,
+td {
+    padding: 4px 8px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.odd {
+    background-color: whitesmoke;
 }
